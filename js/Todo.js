@@ -3,7 +3,7 @@ const todo_input = todo_form.querySelector("input");
 const todo_ul = document.querySelector("#todo-ul");
 const TODO_KEY  = "todos"; 
 
-const toDos = [];
+let toDos = [];
 
 const SavingTodo = () =>{
 
@@ -11,10 +11,16 @@ const SavingTodo = () =>{
     console.log(localStorage.getItem(TODO_KEY));
 
 }
+
+
+
 const DeleteTodo = (event) => {
 //부모 노드 찾기
 const removeli = event.target.parentElement;
 removeli.remove();
+console.log(removeli);
+toDos = toDos.filter((todo) => todo.id !== parseInt(removeli.id));
+SavingTodo();
 
 }
 
@@ -23,11 +29,13 @@ const PaintTodo = (newTodo) =>{
     const li = document.createElement("li");
     const span = document.createElement("span");
     const button = document.createElement("button");
-    button.addEventListener("click" , DeleteTodo);
     
-    span.innerText = newTodo;
+    li.id = newTodo.id;
+    
+    span.innerText = newTodo.text;
     button.innerText = "❌";
     
+    button.addEventListener("click" , DeleteTodo);
     li.append(span);
     li.append(button);
     todo_ul.append(li);
@@ -38,8 +46,12 @@ const handleToSubmit = (event) =>{
     event.preventDefault();
     const newTodo = todo_input.value;
     todo_input.value = "";
-    toDos.push(newTodo);
-    PaintTodo(newTodo);
+    const newTodoObj = {
+        text:newTodo,
+        id : Date.now(),
+    }
+    toDos.push(newTodoObj);
+    PaintTodo(newTodoObj);
     SavingTodo();
 }
 todo_form.addEventListener("submit",handleToSubmit);
@@ -49,7 +61,5 @@ const savedTodos = localStorage.getItem(TODO_KEY);
 if(savedTodos !==null){
     const paresdTodos = JSON.parse(savedTodos);
 
-    paresdTodos.forEach(element => {
-        console.log(element);
-    });
+    paresdTodos.forEach(PaintTodo);
 }
