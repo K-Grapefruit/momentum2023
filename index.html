@@ -7,25 +7,42 @@
     <title>오랜만이다</title>
 </head>
 <body>
+    <div class="clock-div">
+        <h2 id="clock">00:00</h2>
+    </div>
+    <div class="Login-form-div">
     <form id="Login-form" class="hidden">
         <input id="Login-input" placeholder="Write Your Name" type="text" required max="15"/>
-        <input id="Login-submit" type="submit" value="Log In"/>
+        
     </form>
-        <h2 id="clock">00:00</h2>
+    </div>
+
+<div id="main-content">
+
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div id="Introduce-div">
         <h1 id="Introduce" class="hidden"></h1>
-        <form id="todo-form">
-            <input id="todo-input" type="text" placeholder="What to do Today?" required>
-        </form>
-            <ul id="todo-ul">
-            </ul>
-        <div id="quote">
-            <span></span>
-            <span></span>
-        </div>
-        <div id="weather">
-            <span></span>
-            <span></span>
-        </div>
+            <form id="todo-form">
+                <input id="todo-input" type="text" maxlength="15" placeholder="What to do Today?" required>
+            </form>
+    </div>
+    
+    <div id="todo-div">
+    
+    <ul id="todo-ul">   
+        </ul>
+        
+    </div>    
+</div>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+
     <script src="js/Todo.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>

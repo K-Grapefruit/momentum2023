@@ -1,3 +1,65 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.clock-div{
+    display: flex;
+    justify-content: center;
+}
+
+.Login-form-div{
+    display: flex;
+    justify-content: center;
+
+}
+
+#Login-input{
+    border:0;
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#main-content{
+    display: flex;
+    justify-content: space-around;
+}
+
+#Introduce-div{
+ 
+    width: 35%;
+}
+
+#Introduce{
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+}
+
+#todo-form{
+    display: flex;
+    justify-content: center;
+}
+
+#todo-form input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    background: rgb(233, 233, 233);
+    text-align: center;
+    opacity: 0.8;
+}
+
+#todo-form input:hover{
+    background:rgb(220, 251, 225);
+}
+
+.clock-div h2{
+    font-size: 70px;
+}
+
 .hidden{
     display: none;
 }
@@ -11,4 +73,14 @@ img{
     bottom: 0;
     z-index: -1;
     opacity: 0.6;
+}
+
+#quote{
+    position: absolute;
+    bottom: 0;
+    padding : 25px;
+}
+
+#quote span{
+    font-size: 25px;
 }
