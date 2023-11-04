@@ -11,8 +11,8 @@ const SuccessWeather = (info) => {
         const cityname = document.querySelector("#weather span:first-child");
         const now_weather = document.querySelector("#weather span:last-child");
 
-        cityname.innerText = data.name;
-        now_weather.innerText = `${data.weather[0].main}/${data.main.temp}`;
+        cityname.innerText = `CITY - ${data.name}`;
+        now_weather.innerText = `${data.weather[0].main}`;
     })
 }
 

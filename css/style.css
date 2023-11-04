@@ -31,6 +31,37 @@ body{
     width: 35%;
 }
 
+#todo-div{
+    width: 15%;
+    border-radius: 15px;
+    background-color: rgb(52, 73, 94);
+    text-align: center;
+    opacity: 0.8;
+}
+
+#todo-div li{
+    list-style: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+    clear:both;
+    float:left;
+}
+
+
+
+#todo-div span{
+    margin-right: 15px;
+    font-weight: 800;
+    font-style: italic;
+    color: white;
+    
+}
+
+#todo-div button{
+    background-color: transparent;
+    border : none;
+}
+
 #Introduce{
     display: flex;
     justify-content: center;
@@ -83,4 +114,22 @@ img{
 
 #quote span{
     font-size: 25px;
+}
+
+#weather{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#weather span:first-child{
+    
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+#weather span:last-child{
+    font-size: 45px;
+    font-weight:700;
 }
